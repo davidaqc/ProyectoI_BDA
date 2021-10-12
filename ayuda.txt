@@ -1,0 +1,38 @@
+Cliente:
+
+npm install body-parser cors express react-scripts --save
+
+Server:
+-> Get general (muestra un mensaje)
+http://localhost:5001/
+-> Get
+http://localhost:5001/libro
+-> Get all
+http://localhost:5001/libro/:id
+http://localhost:5001/libro/61634e00dd043cc4e9415906
+-> Post
+http://localhost:5001/libro
+{
+    "Name": "Pedro Flores",
+        "Author": "Harry Poter",
+	"UserRating": 4,
+        "Reviews": 9198,
+        "Price": 13,
+        "Year": 2016,
+        "Genre": "Comedy"
+}
+
+-> PATCH
+http://localhost:5001/libro/:id
+{
+    	"Name": "Juan Araya",
+        "Author": "Harry Anderson",
+	"UserRating": 2,
+        "Reviews": 1234,
+        "Price": 23,
+        "Year": 2020,
+        "Genre": "Thrill"
+}
+
+-> DELETE
+http://localhost:5001/libro/:id
