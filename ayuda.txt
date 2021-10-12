@@ -1,8 +1,10 @@
 Cliente:
 
-npm install body-parser cors express react-scripts --save
+npm install react-scripts --save
 
 Server:
+npm install body-parser cors express
+
 -> Get general (muestra un mensaje)
 http://localhost:5001/
 -> Get
