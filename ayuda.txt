@@ -3,17 +3,17 @@ Cliente:
 npm install react-scripts --save
 
 Server:
-npm install body-parser cors express
+npm install body-parser cors express fs https mongoose nodemon
 
 -> Get general (muestra un mensaje)
-http://localhost:5001/
--> Get
-http://localhost:5001/libro
+https://localhost:5001/
 -> Get all
-http://localhost:5001/libros/:id
-http://localhost:5001/libros/61634e00dd043cc4e9415906
+https://localhost:5001/libros
+-> Get id
+https://localhost:5001/libros/:id
+https://localhost:5001/libros/61634e00dd043cc4e9415906
 -> Post
-http://localhost:5001/libros
+https://localhost:5001/libros
 {
     "Name": "Pedro Flores",
         "Author": "Harry Poter",
@@ -25,7 +25,7 @@ http://localhost:5001/libros
 }
 
 -> PATCH
-http://localhost:5001/libros/:id
+https://localhost:5001/libros/:id
 {
     	"Name": "Juan Araya",
         "Author": "Harry Anderson",
@@ -37,4 +37,7 @@ http://localhost:5001/libros/:id
 }
 
 -> DELETE
-http://localhost:5001/libros/:id
+https://localhost:5001/libros/:id
+
+Link Certificados SSL
+https://kiuvox.com/como-crear-un-certificado-openssl-para-localhost-en-windows/
