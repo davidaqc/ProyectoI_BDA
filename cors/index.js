@@ -1,7 +1,7 @@
 const cors = require('cors');
 
 const corsOptions = {
-    origin: ['https://127.0.0.1', 'https://mybank.com'],
+    origin: 'https://127.0.0.1',
     optionsSuccessStatus: 200
   };
   
