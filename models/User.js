@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 //Schema
 const LibroSchema = mongoose.Schema({
     Mail: { type: 'string',  allowNull: false, unique: true},
-    Password: { type: 'string', allowNull: false, select: false},
+    Password: { type: 'string', allowNull: false},
     Name: String,
     Lastname: String,
     Country:  String,
