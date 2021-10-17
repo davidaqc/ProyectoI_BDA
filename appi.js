@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const router = express.Router()
-const Libro = require('./models/Libro')
 const Mongoose = require('mongoose');
 const corsMiddleware = require('./cors');
+const cors = require('cors');
 
 //Variables requeridas para el HTTPS
 const fs = require('fs')
@@ -19,11 +19,12 @@ const appi = express()
 appi.use(express.json({ limit: "100mb" }));
 appi.options('*', corsMiddleware);
 appi.use(corsMiddleware);
+appi.use(cors());
 
 //Importacion de Routes
-const librosRoute = require('./routes/libros')
+const usersRoute = require('./routes/users')
 //Uso de las Routes
-appi.use('/libros', librosRoute)
+appi.use('/users', usersRoute)
 appi.use(bodyParser.json())
 
 //Conexion a la base de datos de mongo
@@ -51,7 +52,7 @@ appi.listen(port, function () {
 //GET
 appi.get('/', async (req, res) => {
   try {
-    res.json("For libros try ./libros");
+    res.json("For libros try ./users");
   } catch (err) {
     res.json({ message: err })
   }
