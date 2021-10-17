@@ -8,36 +8,61 @@ npm install body-parser cors express fs https mongoose nodemon
 -> Get general (muestra un mensaje)
 https://localhost:5001/
 -> Get all
-https://localhost:5001/libros
+https://localhost:5001/users
 -> Get id
-https://localhost:5001/libros/:id
-https://localhost:5001/libros/61634e00dd043cc4e9415906
+https://localhost:5001/users/:mail
+https://localhost:5001/users/crmarin@test.com
 -> Post
-https://localhost:5001/libros
+https://localhost:5001/users
 {
-    "Name": "Pedro Flores",
-        "Author": "Harry Poter",
-	"UserRating": 4,
-        "Reviews": 9198,
-        "Price": 13,
-        "Year": 2016,
-        "Genre": "Comedy"
+    "Mail": "crmarin@test.com",
+    "Password": "pass123",
+    "Name": "Cristian",
+    "Lastname": "Marin",
+    "Country": "Costa Rica",
+    "UniversityDegrees": ["Ingeniero en Computadores","Tecnico en Redes"],
+    "TI": 1,
+    "ProgrammingLenguages": ["Python", "C++", "Java", "JavaScript"],
+    "Languages": [{
+        "Language": "Español",
+        "Level": "Avanzado"
+    }, 
+    {
+        "Language": "Ingles",
+        "Level": "Intermedio"
+    },
+    {
+        "Language": "Japones",
+        "Level": "Basico"
+    }
+]
 }
 
 -> PATCH
-https://localhost:5001/libros/:id
+https://localhost:5001/users/:main
+https://localhost:5001/users/crmarin@test.com
 {
-    	"Name": "Juan Araya",
-        "Author": "Harry Anderson",
-	"UserRating": 2,
-        "Reviews": 1234,
-        "Price": 23,
-        "Year": 2020,
-        "Genre": "Thrill"
+    "Country": "Costa Rica",
+    "UniversityDegrees": ["Ingeniero en Computadores"],
+    "ProgrammingLenguages": ["Python", "C++", "Java", "JavaScript"],
+    "Languages": [{
+        "Language": "Español",
+        "Level": "Avanzado"
+    }, 
+    {
+        "Language": "Ingles",
+        "Level": "Intermedio"
+    },
+    {
+        "Language": "Japones",
+        "Level": "Basico"
+    }
+]
 }
 
 -> DELETE
-https://localhost:5001/libros/:id
+https://localhost:5001/users/:main
+https://localhost:5001/users/crmarin@test.com
 
 Link Certificados SSL
 https://kiuvox.com/como-crear-un-certificado-openssl-para-localhost-en-windows/
