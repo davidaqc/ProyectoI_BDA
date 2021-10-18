@@ -1,6 +1,8 @@
 const express = require('express');
 const User = require('../models/User');
 
+const AuthController = require('../controllers/AuthController')
+
 const router = express.Router();
 
 // GET
@@ -18,13 +20,19 @@ router.get('/', async (req, res) => {
 router.get('/:Mail', async (req, res) => {
   try {
     const mail = req.params.Mail;
-    const answer = await User.findOne({Mail: mail})
+    const answer = await User.findOne({ Mail: mail })
     res.json(answer)
 
   } catch (err) {
     res.json({ message: err })
   }
 });
+
+//POST con contraseña encriptada
+router.post('/register', AuthController.register)
+
+//POST login
+router.post('/login', AuthController.login)
 
 //POST
 router.post('/', (req, res) => {
@@ -60,7 +68,7 @@ router.delete("/:Mail", (req, res, next) => {
     .catch(err => {
       console.log(err)
       res.status(500).json({
-        erros: err
+        error: err
       })
     })
 });
@@ -69,10 +77,10 @@ router.delete("/:Mail", (req, res, next) => {
 router.patch('/:Mail', async (req, res) => {
   try {
     const updateOps = {
-        Country: req.body.Country,
-        UniversityDegrees: req.body.UniversityDegrees,
-        ProgrammingLenguages: req.body.ProgrammingLenguages,
-        Languages: req.body.Languages
+      Country: req.body.Country,
+      UniversityDegrees: req.body.UniversityDegrees,
+      ProgrammingLenguages: req.body.ProgrammingLenguages,
+      Languages: req.body.Languages
     };
 
     const updatedUser = await User.updateOne(
