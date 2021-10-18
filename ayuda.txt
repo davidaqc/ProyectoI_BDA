@@ -7,6 +7,8 @@ npm install body-parser cors express fs https mongoose nodemon
 
 -> Get general (muestra un mensaje)
 https://localhost:5001/
+
+Users
 -> Get all
 https://localhost:5001/users
 -> Get id
@@ -15,28 +17,37 @@ https://localhost:5001/users/crmarin@test.com
 -> Post
 https://localhost:5001/users
 {
-    "Mail": "crmarin@test.com",
-    "Password": "pass123",
-    "Name": "Cristian",
-    "Lastname": "Marin",
-    "Country": "Costa Rica",
-    "UniversityDegrees": ["Ingeniero en Computadores","Tecnico en Redes"],
-    "TI": 1,
-    "ProgrammingLenguages": ["Python", "C++", "Java", "JavaScript"],
-    "Languages": [{
-        "Language": "Español",
-        "Level": "Avanzado"
-    }, 
-    {
-        "Language": "Ingles",
-        "Level": "Intermedio"
-    },
-    {
-        "Language": "Japones",
-        "Level": "Basico"
+        "Mail": "crmarin@test.com",
+        "Password": "pass123",
+        "Name": "Cristian",
+        "Lastname": "Marin",
+        "Country": "Costa Rica",
+        "UniversityDegrees": [
+            "Ingeniero en Computadores",
+            "Tecnico en Redes"
+        ],
+        "TI": "Yes",
+        "ProgrammingLenguages": [
+            "Python",
+            "C++",
+            "Java",
+            "JavaScript"
+        ],
+        "Languages": [
+            {
+                "Language": "Español",
+                "Level": "Avanzado"
+            },
+            {
+                "Language": "Ingles",
+                "Level": "Avanzado"
+            },
+            {
+                "Language": "Japones",
+                "Level": "Basico"
+            }
+        ]
     }
-]
-}
 
 -> PATCH
 https://localhost:5001/users/:main
@@ -63,6 +74,21 @@ https://localhost:5001/users/crmarin@test.com
 -> DELETE
 https://localhost:5001/users/:main
 https://localhost:5001/users/crmarin@test.com
+
+Admins
+-> Get id
+https://localhost:5001/admins/:mail
+https://localhost:5001/admins/crmarin@test.com
+
+Request
+-> Get
+https://localhost:5001/request/:number
+Mostrar el nombre completo de las personas que son del área de TI.
+https://localhost:5001/request/1
+Mostrar el nombre completo y país de residencia de las personas que hablan inglés avanzado.
+https://localhost:5001/request/2
+Mostrar el nombre completo, títulos de las personas que no son del área de TI.
+https://localhost:5001/request/3
 
 Link Certificados SSL
 https://kiuvox.com/como-crear-un-certificado-openssl-para-localhost-en-windows/
