@@ -3,7 +3,7 @@ Cliente:
 npm install react-scripts --save
 
 Server:
-npm install body-parser cors express fs https mongoose nodemon
+npm install body-parser cors express fs https mongoose nodemon bcrypt
 
 -> Get general (muestra un mensaje)
 https://localhost:5001/
@@ -48,6 +48,49 @@ https://localhost:5001/users
             }
         ]
     }
+    
+-> Post con contraseña encriptada
+https://localhost:5001/users/register
+{
+        "Mail": "crmarin@test.com",
+        "Password": "pass123",
+        "Name": "Cristian",
+        "Lastname": "Marin",
+        "Country": "Costa Rica",
+        "UniversityDegrees": [
+            "Ingeniero en Computadores",
+            "Tecnico en Redes"
+        ],
+        "TI": "Yes",
+        "ProgrammingLenguages": [
+            "Python",
+            "C++",
+            "Java",
+            "JavaScript"
+        ],
+        "Languages": [
+            {
+                "Language": "Español",
+                "Level": "Avanzado"
+            },
+            {
+                "Language": "Ingles",
+                "Level": "Avanzado"
+            },
+            {
+                "Language": "Japones",
+                "Level": "Basico"
+            }
+        ]
+}
+
+-> Post login
+https://localhost:5001/users/login
+{
+        "Mail": "crmarin@test.com",
+        "Password": "pass123"
+}
+
 
 -> PATCH
 https://localhost:5001/users/:main
@@ -76,9 +119,18 @@ https://localhost:5001/users/:main
 https://localhost:5001/users/crmarin@test.com
 
 Admins
--> Get id
-https://localhost:5001/admins/:mail
-https://localhost:5001/admins/crmarin@test.com
+-> Post login
+https://localhost:5001/admins/
+{
+        "Mail": "admin@admin.com",
+        "Password": "admin123"
+}
+-> Post register
+https://localhost:5001/admins/register
+{
+        "Mail": "admin@admin.com",
+        "Password": "admin123"
+}
 
 Request
 -> Get
